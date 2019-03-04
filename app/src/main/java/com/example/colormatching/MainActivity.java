@@ -20,38 +20,101 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         addListener();
-      // I was close to figuring this out and its almost 2 o clock in the morning
-        // I've worked my entire weekend if I had to guess I've worked a total of 5 hours+ on this
-        // and I don't think its worth me pulling my hair out.
-        // I got to a point were if there was one answer it works no problem but just will not work
-        // properly with two inputs I don't know if there might have been on edit text method like how
-        // the view view works with the button that was one of the things I kept trying to google with
-        // no luck hopefully I get at least half credit I would have seen a tutor about this but out of
-        // my other work I thought this would be something I could handle but apperently I underestimated
-        // how complex the text-answer system was. I'm not saying that you should do this but it might have
-        // have been helpful for certain people to review how to interact with multiple EditTexts in a single
-        // method as I'm sure it more simple then it can possibly be but a 5 minute review would be very welcomed
-        // when using a new enviorment like android app creator.
     }
+        private int colorName1;
+        private int colorName2;
+        private int colorName3;
+        private int colorName4;
+        private int colorName5;
+        private int colorName6;
 
-    private int colorAnswer1;
-    private int colorAnswer2;
 
     private void addListener() {
         EditText.OnEditorActionListener listener = new EditText.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionID, KeyEvent event) {
                 if (actionID == EditorInfo.IME_ACTION_DONE) {
-                    answerCheck1(null);
-                    answerCheck2(null);
 
                     InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
                     imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+
+                    String[] colors = getResources().getStringArray(R.array.colors);
+                    EditText input1 = findViewById(R.id.color1);
+                    String name1 = input1.getText().toString().toLowerCase();
+                    EditText input2 = findViewById(R.id.color2);
+                    String name2 = input2.getText().toString().toLowerCase();
+                    EditText input3 = findViewById(R.id.color3);
+                    String name3 = input3.getText().toString().toLowerCase();
+                    EditText input4 = findViewById(R.id.color4);
+                    String name4 = input4.getText().toString().toLowerCase();
+                    EditText input5 = findViewById(R.id.color5);
+                    String name5 = input5.getText().toString().toLowerCase();
+                    EditText input6 = findViewById(R.id.color6);
+                    String name6 = input6.getText().toString().toLowerCase();
+
+                    if (v.getId() == R.id.color1) {
+                        if (colors[colorName1].equals(name1)) {
+                            answerPrintYes();
+                        } else {
+                            answerPrintNo();
+                            input1.getText().clear();
+                        }
+                    }
+                        if (v.getId() == R.id.color2) {
+                            if (colors[colorName2].equals(name2)) {
+                                answerPrintYes();
+                            } else {
+                                answerPrintNo();
+                                input2.getText().clear();
+                            }
+
+                        }
+
+                    if (v.getId() == R.id.color3) {
+                        if (colors[colorName3].equals(name3)) {
+                            answerPrintYes();
+                        } else {
+                            answerPrintNo();
+                            input3.getText().clear();
+                        }
+
+                    }
+
+                    if (v.getId() == R.id.color4) {
+                        if (colors[colorName4].equals(name4)) {
+                            answerPrintYes();
+                        } else {
+                            answerPrintNo();
+                            input4.getText().clear();
+                        }
+
+                    }
+
+                    if (v.getId() == R.id.color5) {
+                        if (colors[colorName5].equals(name5)) {
+                            answerPrintYes();
+                        } else {
+                            answerPrintNo();
+                            input5.getText().clear();
+                        }
+
+                    }
+
+                    if (v.getId() == R.id.color6) {
+                        if (colors[colorName6].equals(name6)) {
+                            answerPrintYes();
+                        } else {
+                            answerPrintNo();
+                            input6.getText().clear();
+                        }
+
+                    }
 
                     return true;
                 }
 
                 return false;
+
 
             }
         };
@@ -111,13 +174,17 @@ public class MainActivity extends AppCompatActivity {
         }
 
         setColor1(colors[randomColor1]);
-        this.colorAnswer1 = randomColor1;
+        colorName1 = randomColor1;
         setColor2(colors[randomColor2]);
-        this.colorAnswer2 = randomColor2;
+        colorName2 = randomColor2;
         setColor3(colors[randomColor3]);
+        colorName3 = randomColor3;
         setColor4(colors[randomColor4]);
+        colorName4 = randomColor4;
         setColor5(colors[randomColor5]);
+        colorName5 = randomColor5;
         setColor6(colors[randomColor6]);
+        colorName6 = randomColor6;
     }
 
     private void setColor1(String name) {
@@ -126,6 +193,9 @@ public class MainActivity extends AppCompatActivity {
         int color = ContextCompat.getColor(this, colorID);
 
         findViewById(R.id.output1).setBackgroundColor(color);
+        EditText input1 = findViewById(R.id.color1);
+        input1.getText().clear();
+
 
     }
 
@@ -135,7 +205,8 @@ public class MainActivity extends AppCompatActivity {
         int color = ContextCompat.getColor(this, colorID);
 
         findViewById(R.id.output2).setBackgroundColor(color);
-
+        EditText input2 = findViewById(R.id.color2);
+        input2.getText().clear();
     }
 
     private void setColor3(String name) {
@@ -144,7 +215,8 @@ public class MainActivity extends AppCompatActivity {
         int color = ContextCompat.getColor(this, colorID);
 
         findViewById(R.id.output3).setBackgroundColor(color);
-
+        EditText input3 = findViewById(R.id.color3);
+        input3.getText().clear();
     }
 
     private void setColor4(String name) {
@@ -153,7 +225,8 @@ public class MainActivity extends AppCompatActivity {
         int color = ContextCompat.getColor(this, colorID);
 
         findViewById(R.id.output4).setBackgroundColor(color);
-
+        EditText input4 = findViewById(R.id.color4);
+        input4.getText().clear();
     }
 
     private void setColor5(String name) {
@@ -162,7 +235,8 @@ public class MainActivity extends AppCompatActivity {
         int color = ContextCompat.getColor(this, colorID);
 
         findViewById(R.id.output5).setBackgroundColor(color);
-
+        EditText input5 = findViewById(R.id.color5);
+        input5.getText().clear();
     }
 
     private void setColor6(String name) {
@@ -171,34 +245,20 @@ public class MainActivity extends AppCompatActivity {
         int color = ContextCompat.getColor(this, colorID);
 
         findViewById(R.id.output6).setBackgroundColor(color);
-
+        EditText input6 = findViewById(R.id.color6);
+        input6.getText().clear();
     }
 
-    public void answerCheck1(View view) {
-        String[] colors = getResources().getStringArray(R.array.colors);
-        String answer1 = colors[colorAnswer1];
-        EditText input1 = findViewById(R.id.color1);
-        String color1 = input1.getText().toString().toLowerCase();
-
-        if (color1.equals(answer1)) {
-            Toast.makeText(this, "This is the Correct Color Good Job!", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(this, "This is incorrect please try again", Toast.LENGTH_SHORT).show();
+    private void answerPrintYes() {
+        Toast.makeText(this, "This is the Correct Color Good Job!", Toast.LENGTH_SHORT).show();
+    }
+    private void answerPrintNo() {
+        Toast.makeText(this, "This is not the Correct Color", Toast.LENGTH_SHORT).show();
         }
 
     }
-    public void answerCheck2 (View view ) {
-        String[] colors = getResources().getStringArray(R.array.colors);
-        String answer2 = colors[colorAnswer2];
-        EditText input2 = findViewById(R.id.color2);
-        String color2 = input2.getText().toString().toLowerCase();
 
-        if (color2.equals(answer2)) {
-            Toast.makeText(this, "This is the Correct Color Good Job!", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(this, "This is incorrect please try again", Toast.LENGTH_SHORT).show();
-        }
-    }
 
-    }
+
+
 
