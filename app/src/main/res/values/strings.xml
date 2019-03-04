@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">ColorMatching</string>
+    <string-array name="colors">
+        <item>red</item>
+        <item>orange</item>
+        <item>yellow</item>
+        <item>green</item>
+        <item>blue</item>
+        <item>pink</item>
+        <item>cyan</item>
+        <item>violet</item>
+
+    </string-array>
+
+</resources>

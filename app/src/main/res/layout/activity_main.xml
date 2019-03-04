@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/output1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <EditText
+        android:id="@+id/color1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:imeOptions="actionDone"
+        android:inputType="textNoSuggestions|textVisiblePassword"
+        android:hint="Enter Color"
+        android:textSize="32sp"
+        />
+
+    <TextView
+        android:id="@+id/output2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <EditText
+        android:id="@+id/color2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:imeOptions="actionDone"
+        android:inputType="textNoSuggestions|textVisiblePassword"
+        android:hint="Enter Color"
+        android:textSize="32sp"
+        />
+
+    <TextView
+        android:id="@+id/output3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <EditText
+        android:id="@+id/color3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:imeOptions="actionDone"
+        android:inputType="textNoSuggestions|textVisiblePassword"
+        android:hint="Enter Color"
+        android:textSize="32sp"
+        />
+
+    <TextView
+        android:id="@+id/output4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <EditText
+        android:id="@+id/color4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:imeOptions="actionDone"
+        android:inputType="textNoSuggestions|textVisiblePassword"
+        android:hint="Enter Color"
+        android:textSize="32sp"
+        />
+
+    <TextView
+        android:id="@+id/output5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <EditText
+        android:id="@+id/color5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:imeOptions="actionDone"
+        android:inputType="textNoSuggestions|textVisiblePassword"
+        android:hint="Enter Color"
+        android:textSize="32sp"
+        />
+
+    <TextView
+        android:id="@+id/output6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <EditText
+        android:id="@+id/color6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:imeOptions="actionDone"
+        android:inputType="textNoSuggestions|textVisiblePassword"
+        android:hint="Enter Color"
+        android:textSize="32sp"
+        />
+    <Button
+        android:id="@+id/Shuffle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Shuffle"
+        android:textSize="32sp"
+        android:onClick="Shuffle"
+        />
+
+
+</LinearLayout>
